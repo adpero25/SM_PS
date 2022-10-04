@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">MyQuizApp</string>
+    <string name="hello"> Hello World! </string>
+    <string name="trueButton"> true </string>
+    <string name="falseButton"> false </string>
+    <string name="nextButton"> next </string>
+    <!-- Questions -->
+    <bool name="userAnswerTrue">true</bool>
+    <bool name="userAnswerFalse">false</bool>
+
+    <string name="q_activity">Activity jest jednym z komponentów aplikacji Android</string>
+    <bool name="q_activity_answer">true</bool>
+
+    <string name="q_version">Android 8 jest najnowszą wesją systemu Android</string>
+    <bool name="q_version_answer">false</bool>
+
+    <string name="q_listener">Aplikacje dla systemu Android są sterowane zdarzeniowo</string>
+    <bool name="q_listener_answer">true</bool>
+
+    <string name="q_resources">Zasoby aplikacji dla systemu Android definiuje się w plikach .xml</string>
+    <bool name="q_resources_answer">true</bool>
+
+    <string name="q_find_resources">Do zasobów w aplikacji dla systemu Android odnosimy się po nazwach</string>
+    <bool name="q_find_resources_answer">false</bool>
+
+    <string name="q_pajak">Wałęsak brazylijski jest najgroźniejszym pająkiem świata.</string>
+    <bool name="q_pajak_answer">true</bool>
+
+    <string name="q_porzeczka">Najwięcej witaminy C znajduje się w czarnej porzeczce.</string>
+    <bool name="q_porzeczka_answer">false</bool>
+
+    <string name="q_sily">Siły pływowe sprawiają, że każdego roku Księżyc oddala się od Ziemi o 3,8 cm i zmierza w kierunku Marsa.</string>
+    <bool name="q_sily_answer">false</bool>
+
+    <string name="q_australia">W Australii kangurów jest 2 razy więcej niż ludzi.</string>
+    <bool name="q_australia_answer">true</bool>
+
+    <string name="q_mysz">Mysz domowa to najmniejszy ssak świata.</string>
+    <bool name="q_mysz_answer">false</bool>
+
+    <string name="q_mastif">Mastif tybetański to najdroższa rasa psa.</string>
+    <bool name="q_mastif_answer">true</bool>
+
+    <!-- ========= -->
+
+    <string name="correctAnswer">Correct!</string>
+    <string name="incorrectAnswer">Incorrect!</string>
+    <string name="scoreString"> Your points: </string>
+    <string name="title_activity_submit">Submit</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>
