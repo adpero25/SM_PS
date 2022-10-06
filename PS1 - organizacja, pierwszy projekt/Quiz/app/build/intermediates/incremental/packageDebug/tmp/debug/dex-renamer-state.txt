@@ -1,0 +1,4 @@
+#Tue Oct 04 11:13:45 CEST 2022
+base.0=D\:\\STUDIA\\Semestr 5\\Systemy Mobilne\\PS\\PS1 - organizacja, pierwszy projekt\\Quiz\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

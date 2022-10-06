@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/hello"
+    android:gravity="start|top"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:translationX="@dimen/cardview_compat_inset_shadow"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/score_Text_View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="center|start"
+        android:text="@string/scoreString" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/question_Text_View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#065C41"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="start"
+        android:padding="30dp"
+        android:text="@string/hello"
+        android:textColor="#FFEB3B"
+        android:textSize="34sp"
+        android:textStyle="bold|italic" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"  >
+
+        <Button
+            android:id="@+id/trueButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="@string/trueButton"
+            app:backgroundTint="#1AFF00" />
+
+        <Button
+            android:id="@+id/falseButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/falseButton"
+            app:backgroundTint="#FF0000" />
+    </TableRow>
+
+    <Button
+        android:id="@+id/nextButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:text="@string/nextButton"
+        android:textColor="#D1C4E9"
+        app:backgroundTint="#002BFF" />
+
+</LinearLayout>
