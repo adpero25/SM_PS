@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:contentDescription="@string/hello"
     android:gravity="start|top"
     android:orientation="vertical"
@@ -20,8 +21,9 @@
         style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_weight="0.02"
-        android:max="100" />
+        android:layout_weight="0.01"
+        android:max="100"
+        tools:background="#575757" />
 
     <TextView
         android:id="@+id/question_Text_View"
@@ -37,29 +39,38 @@
         android:textSize="34sp"
         android:textStyle="bold|italic" />
 
+    <Button
+        android:id="@+id/promptButton"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:text="@string/promptButton"
+        android:textColor="@color/black"
+        app:backgroundTint="#FF5722" />
+
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.05">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/trueButton"
             style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:layout_weight="0.5"
             android:text="@string/trueButton"
+            android:textColor="@color/black"
             app:backgroundTint="#1AFF00"
             tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/falseButton"
             style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:layout_weight="0.5"
             android:text="@string/falseButton"
+            android:textColor="@color/black"
             app:backgroundTint="#FF0000"
             tools:ignore="TextContrastCheck" />
     </TableRow>
@@ -72,9 +83,10 @@
 
     <Button
         android:id="@+id/nextButton"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.03"
+        android:layout_weight="0.05"
         android:background="#5A00FF"
         android:gravity="center"
         android:text="@string/nextButton"

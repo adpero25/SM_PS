@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    tools:context=".PromptActivity">
+
+    <TextView
+        android:id="@+id/prompt_Text_View"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="@string/promptText"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/yesButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/yesButton"
+        android:textColor="@color/black"
+        app:backgroundTint="#4CAF50" />
+
+    <Button
+        android:id="@+id/noButton"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/noButton"
+        android:textColor="@color/black"
+        app:backgroundTint="#F44336" />
+
+</LinearLayout>

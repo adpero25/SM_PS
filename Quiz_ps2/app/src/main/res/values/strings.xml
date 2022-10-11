@@ -4,14 +4,19 @@
 
     <string name="trueButton"> true </string>
     <string name="falseButton"> false </string>
-    <string name="backButton"> Restart </string>
+    <string name="backButton"> Back </string>
+    <string name="restartButton"> Restart </string>
     <string name="nextButton"> next </string>
-    <string name="startQuizButton">Start quiz!</string>
-    <string name="leaveButton">Leave App</string>
+    <string name="startQuizButton"> Start quiz! </string>
+    <string name="leaveButton"> Leave App </string>
+    <string name="yesButton"> Yes </string>
+    <string name="noButton"> No </string>
 
     <string name="finalScore">This is your final score! </string>
     <string name="welcomeTextView">Welcome in my Quiz App! </string>
     <string name="message">To start quiz please, click button below</string>
+    <string name="promptText">Do you want to see the answer?</string>
+
     <!-- Questions -->
     <bool name="userAnswerTrue">true</bool>
     <bool name="userAnswerFalse">false</bool>
@@ -63,6 +68,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="promptButton">Answer</string>
 
 
 </resources>

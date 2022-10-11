@@ -21,10 +21,10 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/restartButton"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:text="@string/backButton"
+        android:text="@string/restartButton"
         android:textColor="@color/white"
         tools:ignore="TextContrastCheck" />
 

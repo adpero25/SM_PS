@@ -20,6 +20,7 @@ public class QuizActivity extends AppCompatActivity {
     private static final String CURRENT_INDEX_KEY = "currentIndex";
     private static final String USER_SCORE = "score";
     private static final String QUESTION_ARRAY = "questions";
+    public static final String KEY_EXTRA_ANSWER = "correctAnswer";
 
     private TextView questionTextView;
     private ProgressBar progressBar;
@@ -50,7 +51,7 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         Log.d("info_onCreate", "onCreate method has started");
 
-        List<Integer> randomizer = new ArrayList<Integer>();
+        List<Integer> randomizer = new ArrayList<>();
         selectedQuestions = new int[numberOfQuestions];
         if(savedInstanceState != null)
         {
@@ -74,45 +75,44 @@ public class QuizActivity extends AppCompatActivity {
             /*=================================*/
 
         }
+
         Button trueButton = findViewById(R.id.trueButton);
         Button falseButton = findViewById(R.id.falseButton);
         Button nextButton = findViewById(R.id.nextButton);
+        Button promptButton = findViewById(R.id.promptButton);
         questionTextView = findViewById(R.id.question_Text_View);
         progressBar = findViewById(R.id.progressBar);
         progressBar.setProgress(0);
 
-
         progressBar.setVisibility(View.VISIBLE);
         updateProgressBar();
 
-        trueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                checkAnswerCorrectness(true);
-            }
+        /* PROMPT BUTTON ONCLICK*/
+        promptButton.setOnClickListener(view -> {
+            Intent intent = new Intent(QuizActivity.this, PromptActivity.class);
+            boolean correctAnswer = questions[currentIndex].isTrueAnswer();
+            intent.putExtra(KEY_EXTRA_ANSWER, correctAnswer);
+            startActivity(intent);
         });
 
-        falseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkAnswerCorrectness(false);
-            }
-        });
+        /* TRUE BUTTON ONCLICK*/
+        trueButton.setOnClickListener(v -> checkAnswerCorrectness(true));
 
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                currentIndex = (currentIndex + 1);
-                if(currentIndex == numberOfQuestions)
-                {
-                    Intent intent = new Intent(QuizActivity.this, NextActivity.class);
-                    intent.putExtra("finalResult", String.valueOf(score));
-                    startActivity(intent);
-                }
-                else{
-                    setNextQuestion();
-                    updateProgressBar();
-                }
+        /* FALSE BUTTON ONCLICK*/
+        falseButton.setOnClickListener(v -> checkAnswerCorrectness(false));
+
+        /* NEXT BUTTON ONCLICK*/
+        nextButton.setOnClickListener(v -> {
+            currentIndex = (currentIndex + 1);
+            if(currentIndex == numberOfQuestions)
+            {
+                Intent intent = new Intent(QuizActivity.this, NextActivity.class);
+                intent.putExtra("finalResult", String.valueOf(score));
+                startActivity(intent);
+            }
+            else{
+                setNextQuestion();
+                updateProgressBar();
             }
         });
         setNextQuestion();
@@ -149,7 +149,6 @@ public class QuizActivity extends AppCompatActivity {
         super.onStart(); /* first line is always super() call*/
         Log.d("info_onStart", "onStart method has started");
 
-
     }
 
     @Override
@@ -172,6 +171,7 @@ public class QuizActivity extends AppCompatActivity {
         outState.putInt(CURRENT_INDEX_KEY, currentIndex);
         outState.putInt(USER_SCORE, score);
         outState.putIntArray(QUESTION_ARRAY, selectedQuestions);
+
     }
 
     @Override

@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:contentDescription="@string/welcomeTextView"
     android:orientation="vertical"
     android:padding="30dp"
+    tools:background="@color/black"
     tools:context=".MainActivity">
 
     <TextView
@@ -20,6 +22,7 @@
         android:padding="30dp"
         android:text="@string/welcomeTextView"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold" />
 
@@ -34,6 +37,7 @@
         android:padding="30dp"
         android:text="@string/message"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="24sp" />
 
     <Button
@@ -43,5 +47,7 @@
         android:layout_weight="0.05"
         android:background="#5A00FF"
         android:foregroundGravity="center"
-        android:text="@string/startQuizButton" />
+        android:text="@string/startQuizButton"
+        android:textColor="@color/white"
+        tools:ignore="TextContrastCheck" />
 </LinearLayout>
