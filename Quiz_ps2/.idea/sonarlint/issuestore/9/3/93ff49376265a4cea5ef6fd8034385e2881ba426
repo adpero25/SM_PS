@@ -1,0 +1,8 @@
+
+z	java:S116"_Rename this field "finalScore_Text_View" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯Íj8²Ï‘¼0
+v
+java:S1450"YRemove the "backButton" field and declare it as a local variable in the relevant methods.(×¿šô8²Ï‘¼0
+
+java:S1450"cRemove the "finalScore_Text_View" field and declare it as a local variable in the relevant methods.(¯Íj8Ÿ²Ï‘¼0
+L
+java:S1068"/Remove this unused "leaveButton" private field.(ÆÏî¹8¹²Ï‘¼0

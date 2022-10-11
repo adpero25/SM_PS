@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/welcomeTextView"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcome_text_View"
+        android:layout_width="match_parent"
+        android:layout_height="403dp"
+        android:layout_margin="10dp"
+        android:layout_weight="0.8"
+        android:background="#065C41"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="@string/welcomeTextView"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="0.1"
+        android:background="#065C41"
+        android:gravity="center"
+        android:padding="30dp"
+        android:text="@string/message"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/startQuizButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:background="#5A00FF"
+        android:foregroundGravity="center"
+        android:text="@string/startQuizButton" />
+</LinearLayout>
