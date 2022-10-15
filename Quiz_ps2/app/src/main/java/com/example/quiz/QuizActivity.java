@@ -1,8 +1,13 @@
 package com.example.quiz;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +26,7 @@ public class QuizActivity extends AppCompatActivity {
     private static final String USER_SCORE = "score";
     private static final String QUESTION_ARRAY = "questions";
     public static final String KEY_EXTRA_ANSWER = "correctAnswer";
+    public static final String FINAL_RESULT = "finalResult";
 
     private TextView questionTextView;
     private ProgressBar progressBar;
@@ -28,6 +34,7 @@ public class QuizActivity extends AppCompatActivity {
     private int currentIndex;
     private final int numberOfQuestions = 5;
     int[] selectedQuestions;
+    private boolean answerWasShown = false;
 
 
     private final Question[] questions = new Question[] {
@@ -90,10 +97,13 @@ public class QuizActivity extends AppCompatActivity {
         /* PROMPT BUTTON ONCLICK*/
         promptButton.setOnClickListener(view -> {
             Intent intent = new Intent(QuizActivity.this, PromptActivity.class);
-            boolean correctAnswer = questions[currentIndex].isTrueAnswer();
+            boolean correctAnswer = questions[selectedQuestions[currentIndex]].isTrueAnswer();
             intent.putExtra(KEY_EXTRA_ANSWER, correctAnswer);
-            startActivity(intent);
+
+            /* Method that get result from another activity*/
+            openActivityForResultLauncher.launch(intent);
         });
+
 
         /* TRUE BUTTON ONCLICK*/
         trueButton.setOnClickListener(v -> checkAnswerCorrectness(true));
@@ -104,10 +114,11 @@ public class QuizActivity extends AppCompatActivity {
         /* NEXT BUTTON ONCLICK*/
         nextButton.setOnClickListener(v -> {
             currentIndex = (currentIndex + 1);
+            answerWasShown = false;
             if(currentIndex == numberOfQuestions)
             {
                 Intent intent = new Intent(QuizActivity.this, NextActivity.class);
-                intent.putExtra("finalResult", String.valueOf(score));
+                intent.putExtra(FINAL_RESULT, String.valueOf(score));
                 startActivity(intent);
             }
             else{
@@ -118,7 +129,15 @@ public class QuizActivity extends AppCompatActivity {
         setNextQuestion();
     }
 
-
+    ActivityResultLauncher<Intent> openActivityForResultLauncher = registerForActivityResult
+            (new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                        @Override
+                        public void onActivityResult(ActivityResult result) {
+                            if(result.getResultCode() != Activity.RESULT_OK) { return; }
+                                if(result.getData() == null) { return; }
+                                answerWasShown = result.getData().getBooleanExtra(PromptActivity.KEY_EXTRA_ANSWER_SHOWN, false);
+                        }
+                    });
 
     private void setNextQuestion() {
         questionTextView.setText(questions[selectedQuestions[currentIndex]].getQuestionId());
@@ -132,37 +151,37 @@ public class QuizActivity extends AppCompatActivity {
         boolean correctAnswer = questions[selectedQuestions[currentIndex]].isTrueAnswer();
         int resultMessageId;
 
-        if(userAnswer == correctAnswer){
-            resultMessageId = R.string.correctAnswer;
-            score = score + 1;
+        if(answerWasShown) {
+            resultMessageId = R.string.answerWasShown;
         }
         else {
-            resultMessageId = R.string.incorrectAnswer;
+            if(userAnswer == correctAnswer) {
+                resultMessageId = R.string.correctAnswer;
+                score = score + 1;
+            }
+            else {
+                resultMessageId = R.string.incorrectAnswer;
+            }
         }
-
         Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
     }
-
 
     @Override
     protected void onStart() {
         super.onStart(); /* first line is always super() call*/
         Log.d("info_onStart", "onStart method has started");
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.d("info_onResume", "onResume method has started");
-
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.d("info_onPause", "onPause method has started");
-
     }
 
     @Override
@@ -171,20 +190,17 @@ public class QuizActivity extends AppCompatActivity {
         outState.putInt(CURRENT_INDEX_KEY, currentIndex);
         outState.putInt(USER_SCORE, score);
         outState.putIntArray(QUESTION_ARRAY, selectedQuestions);
-
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         Log.d("info_onStop", "onStop method has started");
-
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d("info_onDestroy", "onDestroy  method has started");
-
     }
 }

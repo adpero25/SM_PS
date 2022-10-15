@@ -13,7 +13,7 @@ public class NextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_next);
 
-        String result = getIntent().getStringExtra("finalResult");
+        String result = getIntent().getStringExtra(QuizActivity.FINAL_RESULT);
 
         TextView finalScore_Text_View = findViewById(R.id.finalScorePoints);
         String message = "Your final score is " + result;
