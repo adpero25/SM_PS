@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="textFieldStyle">
+        <item name="android:textColor">#00FF00</item>
+
+        <item name="android:textSize">18dp</item>
+
+        <item name="android:editTextBackground">@color/black</item>
+
+        <item name="android:padding">15dp</item>
+
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+</resources>
