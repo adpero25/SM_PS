@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".SensorDetailsActivity">
+
+    <TextView
+        android:id="@+id/sensor_name_label"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:text="@string/detailSensorName"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/sensor_value_label"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:text="@string/detailSensorValue"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/sensor_value_label_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:text="@string/detailSensorValue1"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/sensor_value_label_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:text="@string/detailSensorValue2"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/sensor_value_label_3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:text="@string/detailSensorValue3"
+        android:textSize="16sp" />
+
+</LinearLayout>

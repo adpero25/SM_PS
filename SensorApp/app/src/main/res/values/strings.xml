@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">SensorApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sensor_ico">Sensor icon</string>
+    <string name="sensorName">Sensor name</string>
+    <string name="sensorCount">Liczba czujników: %d</string>
+    <string name="showSubtitle">Pokaż podtytuł</string>
+    <string name="hideSubtitle">Ukryj podtytuł</string>
+    <string name="missingSensor">Brak czujnika</string>
+    <string name="detailSensorName">Nazwa czujnika: %1$s</string>
+    <string name="detailSensorValue">Wartość zwracana czujnika: %1$.6f</string>
+    <string name="detailSensorValue1">Zwracana wartość 1: %1$.6f</string>
+    <string name="detailSensorValue2">Zwracana wartość 2: %1$.6f</string>
+    <string name="detailSensorValue3">Zwracana wartość 3: %1$.6f</string>
+    <string name="manyValues">"Zwracane wartości: "</string>
+    <string name="pobierzLokalizacje">Pobierz lokalizację</string>
+    <string name="localizationInfo">Wciśnij przycisk, aby pobrać ostatnią lokalizację</string>
+    <string name="location_permission_denied">Location permission denied!</string>
+    <string name="location_text">"Szerokość geograficzna: %1$.4f \nDługość geograficzna: %2$.4f \nCzas: %3$tr"</string>
+    <string name="noLocation">Nie znaleziono lokalizacji!</string>
+    <string name="adresText">"Adres: %1$s \nCzas: %2$tr"</string>
+    <string name="serviceNotAvailable">Serwis nie jest dostępny</string>
+    <string name="noAdresFound">Nie znaleziono adresu!</string>
+    <string name="pobierzAdres">Pobierz adres</string>
+
+</resources>
