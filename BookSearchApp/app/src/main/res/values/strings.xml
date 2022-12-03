@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BookSearchApp</string>
+    <string name="TitleDetails">Title:</string>
+    <string name="AuthorDetails">Authors:</string>
+    <string name="PagesDetails">Pages:</string>
+    <string name="ReleaseDetails">Released:</string>
+    <string name="LanguageDetails">Languages:</string>
+    <string name="SubjectsDetails">Subjects:</string>
+</resources>

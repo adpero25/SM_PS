@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".BookDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/details_img_cover"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_alignParentStart="true"
+            android:contentDescription="Book Cover"
+            android:scaleType="centerInside"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_img_cover"
+            android:text="@string/TitleDetails" />
+
+        <TextView
+            android:id="@+id/details_book_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_below="@+id/details_img_cover"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details_book_title"
+                android:text="@string/AuthorDetails" />
+
+        <TextView
+            android:id="@+id/details_book_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_book_title"
+            android:layout_alignStart="@+id/details_book_title"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details_book_author"
+                android:text="@string/PagesDetails" />
+
+        <TextView
+            android:id="@+id/details_number_of_pages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_book_author"
+            android:layout_alignStart="@+id/details_book_author"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details_number_of_pages"
+                android:text="@string/ReleaseDetails" />
+
+        <TextView
+            android:id="@+id/details_date_of_release"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_number_of_pages"
+            android:layout_alignStart="@+id/details_book_author"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details_date_of_release"
+                android:text="@string/LanguageDetails" />
+
+        <TextView
+            android:id="@+id/details_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_date_of_release"
+            android:layout_alignStart="@+id/details_book_author"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details_language"
+                android:text="@string/SubjectsDetails" />
+
+        <TextView
+            android:id="@+id/details_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_language"
+            android:layout_alignStart="@+id/details_book_author"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
