@@ -1,0 +1,76 @@
+2.
+d)
+@property (nonatomic, weak) IBOutlet UILabel *messageLabel;
+@property (nonatomic, weak) IBOutlet UITextField *inputField;
+
+
+e) 
+-(IBAction)enter {
+	NSString *yourName = self.inputField.text;
+	NSString *myName = @"YourName";
+	NSString *message;
+
+	if ([yourName length] == 0) {
+		yourName = @"World";
+	}
+
+	if ([yourName isEqualToString:myName]) {
+ 		message = [NSString stringWithFormat:@"Hello %@! We have the same name :)", yourName];
+	}
+	else {
+ 		message = [NSString stringWithFormat:@"Hello %@!", yourName]; 
+	}
+
+	self.messageLabel.text = message;
+
+}
+
+
+
+
+
+3.
+h)
+
+-(void) prepareForSegue:(UIStoryBoardSegue *)segue sender:(id)sender {
+	if([segue.identifier isEqualToString:@"sendSurnameSegue"]) {
+		SecondViewController *controller = (SecondViewController *) segue.destinationViewController
+		controller.surname = self.surnaleTextField.text;
+	}
+
+	controller.delegate = self;
+}
+
+
+k)
+@class SecondViewController;
+
+@protocol SecondViewControllerDelegate <NSObject>
+
+-(void) addItemViewController:(SecondViewController *) controller didFinishEnteringItem: (NSString *)item;
+
+@end
+
+
+i)
+@propety (nonatomic, weak) id <SecondViewControllerDelegate> delegate;
+
+
+n)
+NSSTring *itemToPassBack = self.modifiedSurnameTextField.text;
+[self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack];
+[self dismissViewControllerAnimated:YES completion:nil];
+
+o)
+#import "SecondViewController.h"
+
+@interface ViewController : UIViewController <SecondViewControllerDelegate>
+
+
+p)
+-(void) addItemViewController:(SecondViewController *)controller didFinishEnteringItem:(NSString *)item {
+	NSLog(@"This was returned from SecondViewController %@", item);
+	self.surnameTextField.text = item;
+}
+
+
